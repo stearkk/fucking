@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>мяу</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="user-scalable=no">
+</head>
+
+<body>
+
+    <div class="container">
+        <p id="passwordHint">вводи пороль))</p>
+        <form id="passwordForm" style="z-index: 8000;">
+            <input type="text" id="passwordInput"
+            autocomplete="off"
+            spellcheck="false"
+            inputmode="none">
+    </form>
+     <div class="keyboard" id="ruKeyboard">
+        <div class="keyboard-row">
+            <button class="key">й</button><button class="key">ц</button><button class="key">у</button><button class="key">к</button><button class="key">е</button><button class="key">н</button><button class="key">г</button><button class="key">ш</button><button class="key">щ</button><button class="key">з</button><button class="key">х</button><button class="key">ъ</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key">ф</button><button class="key">ы</button><button class="key">в</button><button class="key">а</button><button class="key">п</button><button class="key">р</button><button class="key">о</button><button class="key">л</button><button class="key">д</button><button class="key">ж</button><button class="key">э</button>
+            <button class="key backspace" onclick="backspace()"><</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key lang-btn" onclick="switchLanguage()">en</button>
+            <button class="key">я</button><button class="key">ч</button><button class="key">с</button><button class="key">м</button><button class="key">и</button><button class="key">т</button><button class="key">ь</button><button class="key">б</button><button class="key">ю</button>
+            <button class="key enter" onclick="enter()" >↵</button>
+        </div>
+    </div>
+    <div class="keyboard hidden" id="enKeyboard">
+        <div class="keyboard-row">
+            <button class="key">q</button><button class="key">w</button><button class="key">e</button><button class="key">r</button><button class="key">t</button><button class="key">y</button><button class="key">u</button><button class="key">i</button><button class="key">o</button><button class="key">p</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key">a</button><button class="key">s</button><button class="key">d</button><button class="key">f</button><button class="key">g</button><button class="key">h</button><button class="key">j</button><button class="key">k</button><button class="key">l</button>
+            <button class="key backspace" onclick="backspace()"><</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key lang-btn" onclick="switchLanguage()">ru</button>
+            <button class="key">z</button><button class="key">x</button><button class="key">c</button><button class="key">v</button><button class="key">b</button><button class="key">n</button><button class="key">m</button>
+            <button class="key enter" onclick="enter()">↵</button>
+        </div>
+    </div>
+    
+    <div class="emojis" id="emoji" style="display: none;">
+        <img id="lefthand" src="gallery/lefthand.png"
+         style="width: 27vw; max-width: 283px; margin-right: -30px">
+        <img id="imbulkacat" src="gallery/imbulkacat.png"
+         style="width: 46vw; max-width: 2970px; margin-top: -50px;">
+        <img id="righthand" src="gallery/righthand.png"
+         style="width: 27vw; max-width: 285px; margin-left: -20px">
+    </div>
+    
+    <div class="invisible" id="invisible" style="top:-20vh; display: none;">
+        <div class="texthint" id="invisiblehint">
+            <p class="hint">хочешь что-то спрятать,</p>
+            <p>попробуй положить на самое видное место)))</p>
+        </div>
+        <p id="invisiblepass" >
+            пороль - фуфайка</p>
+    </div>
+
+    <div class="texthint" id="light" style="display: none; top:-20vh">
+        <p>а теперь тебе пора посмотреть остальной подарок</p>
+    </div>
+
+    <div class="map" id="map" style="display: none;">
+        <p class="line-1">ну что ж, ты умничка!</p>
+        <p class="line-2">не буду усложнять напоследок</p>
+        <a class="link" style="margin-top: 8vh;" target="_blank" href="https://www.google.com/maps/d/edit?mid=1J966phqB6Mq2H2eH-5GpX-ehJhEJfw4&usp=sharing">клик сюды</a>
+    </div>
+    
+    <div class="qr" id="car" style="display: none;">
+        <img id="carimg" src="gallery/democar.jpg"
+         style="width: 67vw; max-width: 1500px;">
+    </div>
+
+    <div class="tggifts" id="tggifts" style="display: none;">
+        <div class="gifts" style="margin-bottom: 2.5vh;">
+            <img id="heart" src="gallery/heart.png"
+             style="width: 20vw; max-width: 190px; min-width: 90px;">
+            <img id="rose" src="gallery/rose.png"
+             style="width: 20vw; max-width: 194px; min-width: 90px;">
+            <img id="rocket" src="gallery/spaceship.png"
+             style="width: 20vw; max-width: 194px; min-width: 90px;">
+            <img id="shampagne" src="gallery/shampagne.png"
+             style="width: 14vw; max-width: 150px; min-width: 90px;">
+            <img id="bear" src="gallery/bear.png"
+             style="width: 20vw; max-width: 194px; min-width: 90px;">
+        </div>
+        <div class="descriptions">
+            <div class="empty">
+                <img class="drag" id="deer" src="gallery/deer.png"></div>
+            <div class="empty">
+                <img class="drag" id="redbull" src="gallery/redbull.png"></div>
+            <div class="empty">
+                <img class="drag" id="humster" src="gallery/humster.png"></div>
+            <div class="empty">
+                <img class="drag" id="astronaut" src="gallery/astronaut.png"></div>
+            <div class="empty">
+                <img class="drag" id="shit" src="gallery/shit.png" ></div>
+        </div>
+    </div>
+
+    <div class="qr" id="condoms" style="display: none;">
+        <img id="condomsimg" src="gallery/democondoms.jpg"
+         style="width: 67vw;">
+    </div>
+
+    <button id="helpBtn">help</button>
+
+    <div class="wheel-widget" id="wheelWidget">
+        <div class="close-btn" id="closeBtn" title="Закрыть">&times;</div>
+
+        <div class="wheel-container">
+            <div class="pointer"></div>
+            <canvas id="wheelCanvas" width="800vw" height="800vw"></canvas>
+            <div id="result"></div>
+        </div>
+        
+        <button class="btn" id="spinBtn">Крутить колесо!</button>
+    </div>
+</div>
+
+        <script src="script.js"></script> 
+</body>
+
+</html>
