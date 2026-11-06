@@ -58,8 +58,7 @@
     
     <div class="invisible" id="invisible" style="top:-20vh; display: none;">
         <div class="texthint" id="invisiblehint">
-            <p class="hint">хочешь что-то спрятать,</p>
-            <p>попробуй положить на самое видное место)))</p>
+            <p>кажется на этой страничке что-то выделяется)))</p>
         </div>
         <p id="invisiblepass" >
             пороль - фуфайка</p>
@@ -75,9 +74,10 @@
         <a class="link" style="margin-top: 8vh;" target="_blank" href="https://www.google.com/maps/d/edit?mid=1J966phqB6Mq2H2eH-5GpX-ehJhEJfw4&usp=sharing">клик сюды</a>
     </div>
     
-    <div class="qr" id="car" style="display: none;">
-        <img id="carimg" src="gallery/democar.jpg"
-         style="width: 67vw; max-width: 1500px;">
+    <div class="qr" id="car" style="display: none; flex-direction: column;">
+        <img id="carimg" src="gallery/car.jpg"
+         style="width: 87vw; top: 7vh; max-width: 1500px; margin-bottom: 30px; ">
+         <p>Судостроительная 29</p>
     </div>
 
     <div class="tggifts" id="tggifts" style="display: none;">
@@ -86,13 +86,14 @@
              style="width: 20vw; max-width: 190px; min-width: 90px;">
             <img id="rose" src="gallery/rose.png"
              style="width: 20vw; max-width: 194px; min-width: 90px;">
-            <img id="rocket" src="gallery/spaceship.png"
+            <img id="spaceship" src="gallery/spaceship.png"
              style="width: 20vw; max-width: 194px; min-width: 90px;">
             <img id="shampagne" src="gallery/shampagne.png"
              style="width: 14vw; max-width: 150px; min-width: 90px;">
             <img id="bear" src="gallery/bear.png"
              style="width: 20vw; max-width: 194px; min-width: 90px;">
         </div>
+        <h1 class="code" style="display: none; position: absolute; justify-content: center; width: 100%; top:12vh; font-size: 2.5vh;" >𝙞9 𝙗6 𝙘2 𝙗7 𝙙9</h1>
         <div class="descriptions">
             <div class="empty">
                 <img class="drag" id="deer" src="gallery/deer.png"></div>
@@ -114,13 +115,14 @@
 
     <button id="helpBtn">help</button>
 
-    <div class="wheel-widget" id="wheelWidget">
+    <div class="wheel-widget" id="wheelWidget" style="display:none">
         <div class="close-btn" id="closeBtn" title="Закрыть">&times;</div>
 
-        <div class="wheel-container">
+        <div class="wheel-container" >
             <div class="pointer"></div>
             <canvas id="wheelCanvas" width="800vw" height="800vw"></canvas>
-            <div id="result"></div>
+            <div id="result" style="display:none"></div>
+            <div id="hints" style="display: none"></div>
         </div>
         
         <button class="btn" id="spinBtn">Крутить колесо!</button>
@@ -128,6 +130,7 @@
 </div>
 
         <script src="script.js"></script> 
+        <script src="https://jsdelivr.net"></script>
 </body>
 
 </html>
